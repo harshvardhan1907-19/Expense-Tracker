@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>💰 Expense Tracker</h1>
+
+        <div class="balance">
+            <h3>Your Balance</h3>
+            <h2 id="balance">$0.00</h2>
+        </div>
+
+        <div class="summary">
+            <div class="income">
+                <h4>Income</h4>
+                <p id="income">$0.00</p>
+            </div>
+            <div class="expense">
+                <h4>Expense</h4>
+                <p id="expense">$0.00</p>
+            </div>
+        </div>
+
+        <div class="add-transaction">
+            <h3>Add Transaction</h3>
+            <form id="transaction-form">
+                <input type="text" id="description" placeholder="Description" required>
+                <input type="number" id="amount" placeholder="Amount (positive = income, negative = expense)" required>
+                <input type="date" id="date" required>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="food">🍔 Food</option>
+                    <option value="transport">🚗 Transport</option>
+                    <option value="entertainment">🎬 Entertainment</option>
+                    <option value="bills">📄 Bills</option>
+                    <option value="shopping">🛒 Shopping</option>
+                    <option value="salary">💸 Salary</option>
+                    <option value="other">📌 Other</option>
+                </select>
+                <button type="submit">Add Transaction</button>
+            </form>
+        </div>
+
+        <div class="filters">
+            <button data-filter="all" class="active">All</button>
+            <button data-filter="week">This Week</button>
+            <button data-filter="month">This Month</button>
+        </div>
+
+        <div class="transactions">
+            <h3>Transactions</h3>
+            <ul id="transaction-list"></ul>
+        </div>
+
+        <div class="chart-container">
+            <h3>Spending by Category</h3>
+            <canvas id="category-chart" width="400" height="300"></canvas>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
