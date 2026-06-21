@@ -79,6 +79,6 @@ Through this project, I gained hands-on experience with:
 
 ## Author
 
-Harshvardhan Sagar
+Harshvardhan Rathod
 
 Feel free to fork, contribute, or suggest improvements.
